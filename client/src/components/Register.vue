@@ -8,12 +8,14 @@
       placeholder="email"
       v-model="email"
       />
+      <br/>
       <input 
       type="password"
       name="password"
       placeholder="password"
       v-model="password"
       />
+      <br/>
       <button 
       @click="register">Register</button>
   </div>
@@ -35,7 +37,7 @@ export default {
   },
   methods: {
     async register () {
-      const response = await AuthenticationService.register({
+      await AuthenticationService.register({
         email: this.email,
         password: this.password
       })
